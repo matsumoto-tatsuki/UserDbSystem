@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="367.0" prefWidth="265.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usermanagementsystem.CompanyInitController">
+   <children>
+      <Label layoutX="20.0" layoutY="30.0" text="企業管理システム" />
+      <Label layoutX="34.0" layoutY="71.0" text="企業名" />
+      <TableView fx:id="companyTable" layoutX="32.0" layoutY="200.0" onMouseClicked="#onTableClick" prefHeight="137.0" prefWidth="202.0">
+        <columns>
+          <TableColumn fx:id="idColumn" prefWidth="98.0" text="ID" />
+          <TableColumn fx:id="nameColumn" prefWidth="103.0" text="企業名" />
+        </columns>
+      </TableView>
+      <Button fx:id="addButton" layoutX="32.0" layoutY="156.0" mnemonicParsing="false" onAction="#onAddButtonClick" text="追加" />
+      <Button fx:id="deleteButton" layoutX="113.0" layoutY="156.0" mnemonicParsing="false" onAction="#onDeleteButtonClick" text="削除" />
+      <Button fx:id="updateButton" layoutX="194.0" layoutY="156.0" mnemonicParsing="false" onAction="#onUpdateButtonClick" text="更新" />
+      <TextField fx:id="companyText" layoutX="80.0" layoutY="67.0" />
+   </children>
+</AnchorPane>

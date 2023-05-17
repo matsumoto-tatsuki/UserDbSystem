@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usermanagementsystem.UserController">
+   <children>
+      <Label layoutX="39.0" layoutY="35.0" onMouseClicked="#onLabelClick" text="ユーザ管理システム" />
+      <Label layoutX="59.0" layoutY="62.0" text="ユーザ追加" />
+      <Label layoutX="59.0" layoutY="92.0" text="所属企業" />
+      <Label layoutX="59.0" layoutY="120.0" text="名前" />
+      <Label layoutX="59.0" layoutY="149.0" text="スコア" />
+      <ComboBox fx:id="addCompanyBox" layoutX="125.0" layoutY="88.0" prefWidth="150.0" />
+      <TextField fx:id="addNameText" layoutX="125.0" layoutY="116.0" />
+      <TextField fx:id="addScoreText" layoutX="125.0" layoutY="145.0" />
+      <Label layoutX="328.0" layoutY="62.0" text="ユーザ編集" />
+      <Label layoutX="330.0" layoutY="92.0" text="所属企業" />
+      <Label layoutX="330.0" layoutY="120.0" text="名前" />
+      <Label layoutX="330.0" layoutY="149.0" text="スコア" />
+      <ComboBox fx:id="editCompanyBox" layoutX="394.0" layoutY="88.0" prefWidth="150.0" />
+      <TextField fx:id="editNameText" layoutX="395.0" layoutY="116.0" />
+      <TextField fx:id="editScoreText" layoutX="395.0" layoutY="145.0" />
+      <Button fx:id="addButton" layoutX="124.0" layoutY="175.0" mnemonicParsing="false" onAction="#onAddButtonClick" text="追加" />
+      <Button fx:id="deleteButton" layoutX="324.0" layoutY="175.0" mnemonicParsing="false" onAction="#onDeleteButtonClick" text="削除" />
+      <Button fx:id="updateButton" layoutX="394.0" layoutY="175.0" mnemonicParsing="false" onAction="#onUpdateButtonClick" text="更新" />
+      <TableView fx:id="userTable" layoutX="59.0" layoutY="211.0" onMouseClicked="#onTableClick" prefHeight="171.0" prefWidth="486.0">
+        <columns>
+          <TableColumn fx:id="idColumn" prefWidth="84.0" text="ID" />
+          <TableColumn fx:id="companyColumn" minWidth="0.0" prefWidth="120.0" text="所属企業" />
+            <TableColumn fx:id="nameColumn" prefWidth="140.0" text="名前" />
+            <TableColumn fx:id="scoreColumn" prefWidth="141.0" text="スコア" />
+        </columns>
+      </TableView>
+      <Label fx:id="errorLabel" layoutX="124.0" layoutY="43.0" prefHeight="38.0" prefWidth="198.0" textFill="RED">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <TextField fx:id="searchText" layoutX="434.0" layoutY="22.0" />
+      <Button fx:id="searchButton" layoutX="387.0" layoutY="22.0" mnemonicParsing="false" onAction="#onSearchButtonClick" text="検索" />
+      <Button fx:id="companyInit" layoutX="223.0" layoutY="10.0" mnemonicParsing="false" onAction="#onCompanyButtonClick" text="企業管理" />
+   </children>
+</AnchorPane>
