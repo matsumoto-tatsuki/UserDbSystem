@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usermanagementsystem.UserController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usermanagementsystem.UserController">
    <children>
       <Label layoutX="39.0" layoutY="35.0" onMouseClicked="#onLabelClick" text="ユーザ管理システム" />
       <Label layoutX="59.0" layoutY="62.0" text="ユーザ追加" />
@@ -24,14 +24,6 @@
       <Button fx:id="addButton" layoutX="124.0" layoutY="175.0" mnemonicParsing="false" onAction="#onAddButtonClick" text="追加" />
       <Button fx:id="deleteButton" layoutX="324.0" layoutY="175.0" mnemonicParsing="false" onAction="#onDeleteButtonClick" text="削除" />
       <Button fx:id="updateButton" layoutX="394.0" layoutY="175.0" mnemonicParsing="false" onAction="#onUpdateButtonClick" text="更新" />
-      <TableView fx:id="userTable" layoutX="59.0" layoutY="211.0" onMouseClicked="#onTableClick" prefHeight="171.0" prefWidth="486.0">
-        <columns>
-          <TableColumn fx:id="idColumn" prefWidth="84.0" text="ID" />
-          <TableColumn fx:id="companyColumn" minWidth="0.0" prefWidth="120.0" text="所属企業" />
-            <TableColumn fx:id="nameColumn" prefWidth="140.0" text="名前" />
-            <TableColumn fx:id="scoreColumn" prefWidth="141.0" text="スコア" />
-        </columns>
-      </TableView>
       <Label fx:id="errorLabel" layoutX="124.0" layoutY="43.0" prefHeight="38.0" prefWidth="198.0" textFill="RED">
          <font>
             <Font size="18.0" />
@@ -39,5 +31,24 @@
       <TextField fx:id="searchText" layoutX="434.0" layoutY="22.0" />
       <Button fx:id="searchButton" layoutX="387.0" layoutY="22.0" mnemonicParsing="false" onAction="#onSearchButtonClick" text="検索" />
       <Button fx:id="companyInit" layoutX="223.0" layoutY="10.0" mnemonicParsing="false" onAction="#onCompanyButtonClick" text="企業管理" />
+      <Button fx:id="backButton" layoutX="415.0" layoutY="381.0" mnemonicParsing="false" onAction="#onBackButtonClick" text="前へ" />
+      <Button fx:id="nextButton" layoutX="451.0" layoutY="381.0" mnemonicParsing="false" onAction="#onNextButtonClick" text="次へ" />
+      <Button layoutX="547.0" layoutY="381.0" mnemonicParsing="false" onAction="#onCloseButtonClick" text="閉じる" />
+      <ScrollPane fx:id="scrollPane" layoutX="78.0" layoutY="200.0" prefHeight="183.0" prefWidth="489.0">
+         <content>
+            <TableView fx:id="userTable" onMouseClicked="#onTableClick" prefHeight="178.0" prefWidth="486.0">
+              <columns>
+                <TableColumn fx:id="idColumn" prefWidth="84.0" text="ID" />
+                <TableColumn fx:id="companyColumn" minWidth="0.0" prefWidth="120.0" text="所属企業" />
+                  <TableColumn fx:id="nameColumn" prefWidth="140.0" text="名前" />
+                  <TableColumn fx:id="scoreColumn" prefWidth="141.0" text="スコア" />
+              </columns>
+            </TableView>
+         </content>
+      </ScrollPane>
+      <Label fx:id="pageNum" layoutX="501.0" layoutY="385.0" prefHeight="17.0" prefWidth="46.0" text="1page">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Label>
    </children>
 </AnchorPane>

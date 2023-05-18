@@ -13,6 +13,7 @@ import javafx.stage.Window;
 import static com.example.usermanagementsystem.UserController.errorJudgeText;
 
 public class CompanyInitController {
+    private UserController userController;
     @FXML
     private TextField companyText;
 
@@ -27,22 +28,31 @@ public class CompanyInitController {
 
     CompanyService companyService = new CompanyService();
 
+    public void setParent(UserController userController){
+        this.userController = userController;
+    }
+
+    public void updateParent(){
+        userController.onNextButtonClick();
+    }
     @FXML
     private void initialize() {
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
 
         companyTable.setItems(companyService.findCompaniesAllData());
+       //updateParent();
     }
 
     public void onAddButtonClick(ActionEvent event) {
-        if(errorJudgeText(companyText)) {
-            var name = companyText.getText();
-            var rs = companyService.insertCompany(new Company(name));
-            companyTable.setItems(companyService.findCompaniesAllData());
-
-        }
-        companyText.setText(null);
+        updateParent();
+//        if(errorJudgeText(companyText)) {
+//            var name = companyText.getText();
+//            var rs = companyService.insertCompany(new Company(name));
+//            companyTable.setItems(companyService.findCompaniesAllData());
+//
+//        }
+//        companyText.setText(null);
     }
 
     public void onDeleteButtonClick(ActionEvent event) {

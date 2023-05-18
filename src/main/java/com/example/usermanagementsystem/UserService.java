@@ -10,31 +10,28 @@ public class UserService {
         userDao = new UserDao(connection);
     }
 
-    public ObservableList<User> findAllData(){
-        return userDao.findAllData();
+    public ObservableList<User> findAllData(int offset){
+        return userDao.findAllData(offset);
     }
 
-    public ObservableList<String> findCompaniesData(){
-        return userDao.findCompaniesData();
-    }
-
-    public ObservableList<Company> findCompaniesAllData(){
-        return userDao.findCompaniesAllData();
-    }
 
     public int insertUser(User user){
         return userDao.insertUser(user);
     }
 
-    public int deleteUser(int row){
-        return userDao.deleteUser(row);
+    public int deleteUser(int row, int offset){
+        return userDao.deleteUser(row,offset);
     }
 
-    public int updateUser(User user,int row){
-        return userDao.updateUser(user,row);
+    public int updateUser(User user,int row,int offset){
+        return userDao.updateUser(user,row,offset);
     }
 
     public ObservableList<User> searchUser(String str){
         return userDao.searchUser(str);
+    }
+
+    public void userServiceClose(){
+        userDao.userServiceClose();
     }
 }

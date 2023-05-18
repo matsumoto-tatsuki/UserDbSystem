@@ -28,4 +28,8 @@ public class CompanyService {
     public int updateCompany(Company company,int row){
         return companyDao.updateCompany(company,row);
     }
+
+    public void companyServiceClose(){
+        companyDao.companyServiceClose();
+    }
 }

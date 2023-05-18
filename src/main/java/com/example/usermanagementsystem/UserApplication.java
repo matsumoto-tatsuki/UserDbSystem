@@ -12,6 +12,7 @@ public class UserApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(UserApplication.class.getResource("user-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
+        stage.setResizable(false);
         stage.setTitle("ユーザ管理アプリ");
         stage.setScene(scene);
         stage.show();

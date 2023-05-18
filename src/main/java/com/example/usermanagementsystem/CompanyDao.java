@@ -90,4 +90,11 @@ public class CompanyDao {
             throw new RuntimeException(e);
         }
     }
+    public void companyServiceClose(){
+        try {
+            connection.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
